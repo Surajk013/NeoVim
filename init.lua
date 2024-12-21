@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 local lazy_config = require "configs.lazy"
 
 -- load plugins
+
 require("lazy").setup({
   {
     "NvChad/NvChad",
@@ -51,8 +52,15 @@ vim.cmd([[
   augroup end
 ]])
 
+
+-- keyboard shortcuts
+
 -- Automatically close the nvimtree when a file is opened
  vim.api.nvim_set_keymap('n', '<CR>', ':NvimTreeFindFile<CR>:NvimTreeClose<CR>', { noremap = true, silent = true })
+
+-- shift select 
+vim.opt.mouse = "a"
+vim.opt.keymodel = "startsel,stopsel"
 
 
 -- Switch to the next tab with Ctrl + Shift + Tab
