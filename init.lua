@@ -37,6 +37,15 @@ vim.schedule(function()
   require "mappings"
 end)
 
+
+-- multiple cursors
+
+
+vim.g.VM_maps = {
+    ['Add Cursor Up'] = '<C-S-Up>',
+    ['Add Cursor Down'] = '<C-S-Down>',
+}
+
 -- Fix: Wrap these in vim.cmd
 vim.cmd([[
   autocmd FileType help setlocal modifiable
@@ -78,4 +87,8 @@ vim.api.nvim_set_keymap('n', '<C-S-2>', ':tabn 2<CR>', { noremap = true, silent 
 -- Continue for other tabs as needed
 vim.api.nvim_set_keymap('n', '<C-S-3>', ':tabn 3<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-S-4>', ':tabn 4<CR>', { noremap = true, silent = true })
+
+-- copy line down
+vim.api.nvim_set_keymap('n', '<C-Down>', 'yyp', { noremap = true, silent = true })
+
 

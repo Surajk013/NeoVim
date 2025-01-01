@@ -13,6 +13,20 @@ return {
     end,
   },
 
+
+  -- vim-visual-multi
+  {
+        "mg979/vim-visual-multi",
+        --branch = "master",
+        config = function()
+            -- Optional: Set custom keybindings for multiple cursors
+            vim.g.VM_maps = {
+                ["Add Cursor Up"] = "<C-S-Up>",
+                ["Add Cursor Down"] = "<C-S-Down>",
+            }
+        end,
+    },
+
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
