@@ -12,8 +12,19 @@ return {
       require "configs.lspconfig"
     end,
   },
-
-
+  
+  { "nvzone/typr" },
+  { "NvChad/volt" },
+   
+  {
+    "nvzone/typr",
+    config=function ()
+      require("typr").setup()  
+    end,
+    dependencies = "nvzone/volt",
+    opts = {},
+    cmd = { "Typr", "TyprStats" },
+  },
   -- vim-visual-multi
   {
         "mg979/vim-visual-multi",
