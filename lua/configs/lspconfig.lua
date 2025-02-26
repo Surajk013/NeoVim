@@ -4,6 +4,15 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
+
+
+lspconfig.ts_ls.setup({
+    cmd = { "typescript-language-server", "--stdio" },
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+    root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+})
+
+
 local servers = { "html", "cssls" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
