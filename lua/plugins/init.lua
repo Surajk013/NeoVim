@@ -35,8 +35,12 @@ return {
     config = function()
       require("nvim-treesitter.configs").setup({
         ensure_installed = "all", -- Install all available languages
-        highlight = { enable = true }, -- Enable syntax highlighting
+        highlight = { enable = true, additional_vim_regex_highlighting = false }, -- Enable syntax highlighting
+        index = {enable=true},
+        rainbow = {enable=true},
+
       })
     end,
   },
+ -- This is used to add color brackets
 }
