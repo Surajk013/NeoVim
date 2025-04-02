@@ -1,50 +1,42 @@
 return {
+  -- Formatter plugin (Conform.nvim) for automatic formatting
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
-    opts = require "configs.conform",
+    event = "BufWritePre", -- Run on save
+    opts = require("configs.conform"),
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
+  -- LSP configuration
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require "configs.lspconfig"
+      require("configs.lspconfig") -- Loads custom LSP settings
     end,
   },
-  
-  { "nvzone/typr" },
+
+  -- Utility library for other plugins
   { "NvChad/volt" },
-   
+
+  -- Typing speed tracker (Typr)
   {
     "nvzone/typr",
-    config=function ()
-      require("typr").setup()  
+    dependencies = { "NvChad/volt" }, -- Dependencies should be in a table
+    config = function()
+      require("typr").setup()
     end,
-    dependencies = "nvzone/volt",
     opts = {},
     cmd = { "Typr", "TyprStats" },
   },
-  -- vim-visual-multi
-  {
-        "mg979/vim-visual-multi",
-        branch = "master",
-        config = function()
-            -- Optional: Set custom keybindings for multiple cursors
-            vim.g.VM_maps = {
-                ["Add Cursor Up"] = "<Esc>[1;5A",
-                ["Add Cursor Down"] = "<Esc>[1;5B",
-            }
-        end,
-    },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  -- Treesitter for advanced syntax highlighting
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = "all", -- Install all available languages
+        highlight = { enable = true }, -- Enable syntax highlighting
+      })
+    end,
+  },
 }
