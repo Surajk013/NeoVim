@@ -28,12 +28,12 @@ return {
   -- vim-visual-multi
   {
         "mg979/vim-visual-multi",
-        --branch = "master",
+        branch = "master",
         config = function()
             -- Optional: Set custom keybindings for multiple cursors
             vim.g.VM_maps = {
-                ["Add Cursor Up"] = "<C-S-Up>",
-                ["Add Cursor Down"] = "<C-S-Down>",
+                ["Add Cursor Up"] = "<Esc>[1;5A",
+                ["Add Cursor Down"] = "<Esc>[1;5B",
             }
         end,
     },

@@ -11,6 +11,12 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+vim.cmd([[
+  highlight TabLine guibg=#1e1e2e guifg=#cdd6f4
+  highlight TabLineSel guibg=#89b4fa guifg=#1e1e2e
+  "highlight TabLineFill guibg=#ffffff guifg=#ffffff
+]])
+
 local lazy_config = require "configs.lazy"
 
 -- load plugins
@@ -66,6 +72,9 @@ vim.cmd([[
 
 -- Automatically close the nvimtree when a file is opened
  vim.api.nvim_set_keymap('n', '<CR>', ':NvimTreeFindFile<CR>:NvimTreeClose<CR>', { noremap = true, silent = true })
+
+-- maps 'leader'tt'' for toggline the tabline 
+  vim.api.nvim_set_keymap('n','<leader>tt', [[:lua vim.o.showtabline = vim.o.showtabline == 2 and 0 or 2 <CR>]], {noremap=true,silent=true})
 
 -- shift select 
 vim.opt.mouse = "a"

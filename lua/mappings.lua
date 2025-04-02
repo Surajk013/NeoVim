@@ -80,6 +80,25 @@ map("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "telescope git
 map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
 map("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
 
+-- ************************************************ This DOES NOT WORK ! ********************************************************
+-- multiple cursors 
+-- Ensure vim-visual-multi is configured
+-- vim.g.VM_default_mappings = 1
+--
+-- -- Custom mappings for multiple cursors
+-- vim.g.VM_maps = {
+--     ["Add Cursor Up"] = "<leader>Up",
+--     ["Add Cursor Down"] = "<leader>Down",
+--     ["Select All"] = "<C-S-n>",
+--     ["Find Under"] = "<C-n>",
+--     ["Remove Region"] = "<C-x>",
+--     ["Start Regex Search"] = "<C-r>",
+-- }
+--
+-- print("Visual Multi Mappings Loaded")
+
+ -- ************************************************THIS DOESN NOT WORK ! *********************************************************
+
 map("n", "<leader>th", function()
   require("nvchad.themes").open()
 end, { desc = "telescope nvchad themes" })
