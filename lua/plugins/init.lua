@@ -1,12 +1,5 @@
 return {
-  -- Formatter plugin (Conform.nvim) for automatic formatting
-  {
-    "stevearc/conform.nvim",
-    event = "BufWritePre", -- Run on save
-    opts = require("configs.conform"),
-  },
-
-  -- LSP configuration
+    -- LSP configuration
   {
     "neovim/nvim-lspconfig",
     config = function()
