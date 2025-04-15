@@ -19,6 +19,15 @@ vim.cmd([[
 
 local lazy_config = require "configs.lazy"
 
+-- auto-format 
+   vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+})
+
+
 -- load plugins
 
 require("lazy").setup({

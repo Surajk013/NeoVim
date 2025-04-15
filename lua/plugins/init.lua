@@ -1,5 +1,21 @@
 return {
-    -- LSP configuration
+
+{
+  'utilyre/barbecue.nvim',
+  name = "barbecue",
+  version = "*",
+  dependencies = {
+    "SmiteshP/nvim-navic",
+    "nvim-tree/nvim-web-devicons", -- optional
+    "neovim/nvim-lspconfig",       -- required for LSP
+  },
+  config = function()
+    require("barbecue").setup()
+  end,
+},
+
+   -- LSP configuration
+
   {
     "neovim/nvim-lspconfig",
     config = function()
