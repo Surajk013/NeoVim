@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "gatekeeper",
+	theme = "chadracula-evondev",
   transparency = true,
 
 	-- hl_override = {
